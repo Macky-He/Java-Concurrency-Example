@@ -1,0 +1,16 @@
+1.使用多线程常见的三种方式
+    ①继承Thread类：public class MyThread extends Thread{
+        ...
+    }
+    ②实现Runnable接口：public class MyRunnable implements Runnable {
+        ...
+    }
+    ③使用线程池（最推荐）：阿里巴巴代码规范明确禁止显式创建线程
+
+2.如何停止线程？
+    1）使用return
+3.守护线程：运行在后台，为其他前台线程服务.也可以说守护线程是JVM中非守护线程的 “佣人”
+    1）注意事项：
+        1.  setDaemon(true)必须在start（）方法前执行，否则会抛出IllegalThreadStateException异常
+        2. 在守护线程中产生的新线程也是守护线程
+        3. 不是所有的任务都可以分配给守护线程来执行，比如读写操作或者计算逻辑
