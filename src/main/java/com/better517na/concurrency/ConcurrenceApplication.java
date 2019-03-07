@@ -1,4 +1,4 @@
-package com.better517na.concurrence;
+package com.better517na.concurrency;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

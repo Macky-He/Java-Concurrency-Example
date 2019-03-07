@@ -1,4 +1,4 @@
-package com.better517na.concurrence.concurrence01;
+package com.better517na.concurrency.concurrency01;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

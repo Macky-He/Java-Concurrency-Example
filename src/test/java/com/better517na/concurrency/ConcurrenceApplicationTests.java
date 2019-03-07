@@ -1,4 +1,4 @@
-package com.better517na.concurrence;
+package com.better517na.concurrency;
 
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
