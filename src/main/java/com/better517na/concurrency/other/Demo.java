@@ -1,5 +1,8 @@
 package com.better517na.concurrency.other;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -17,8 +20,10 @@ public class Demo {
 
     public static void main(String[] args) {
         int[] ints = {1, 2, 3, 5, 6, 7, 8, 10, 11, 13, 15, 49};
-        int i = binSearch(ints, 10);
-        System.out.println(i);
+        List<String> s = new ArrayList<>();
+        System.out.print(Arrays.toString(ints));
+//        int i = binSearch(ints, 10);
+        System.out.println(Arrays.toString(ints));
     }
 
     public static int binSearch(int[] array, int a) {

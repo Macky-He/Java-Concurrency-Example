@@ -77,6 +77,5 @@ public class BinarySearch {
         } else {
             return middle;
         }
-
     }
 }

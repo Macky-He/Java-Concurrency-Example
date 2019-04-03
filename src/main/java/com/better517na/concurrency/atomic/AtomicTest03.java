@@ -6,15 +6,16 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 
 /**
  * @author lingbai
  * @create 2019-03-12 18:16
- * @desc 测试AtomicInteger
+ * @desc 测试LongAdder(将热点数据分离，较之AtomicLong有着效率更加高，更加安全)
+ * 缺点：统计时可能导致数据出错，全局统计最好使用AtomicLong
  **/
 @Slf4j
-public class AtomicTest01 {
+public class AtomicTest03 {
 
     /**
      * 请求总数
@@ -26,7 +27,7 @@ public class AtomicTest01 {
      */
     public static int threadTotal = 200;
 
-    public static AtomicInteger count = new AtomicInteger(0);
+    public static LongAdder count = new LongAdder();
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -46,10 +47,10 @@ public class AtomicTest01 {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}",count.get());
+        log.info("count:{}",count);
     }
 
     public static void add(){
-        count.incrementAndGet();
+        count.increment();
     }
 }

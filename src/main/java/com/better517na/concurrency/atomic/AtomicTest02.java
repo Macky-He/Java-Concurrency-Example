@@ -6,15 +6,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author lingbai
  * @create 2019-03-12 18:16
- * @desc 测试AtomicInteger
+ * @desc 测试AtomicLong
  **/
 @Slf4j
-public class AtomicTest01 {
+public class AtomicTest02 {
 
     /**
      * 请求总数
@@ -26,7 +26,7 @@ public class AtomicTest01 {
      */
     public static int threadTotal = 200;
 
-    public static AtomicInteger count = new AtomicInteger(0);
+    public static AtomicLong count = new AtomicLong(0);
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
